@@ -7,21 +7,31 @@
   int x;
 scanf("%d", &x);
 
-bool* arr=(bool*) malloc(x* sizeof(bool));
+bool* arr=(bool*) malloc(x+1)* sizeof(bool));
+
 memset(arr,false,(x+1) *sizeof(bool));
+
 for(int i=2; i<=x; i++)
 {
-for(int j=i; j<=x; j+=i)
+
+for(int j=i; i * 2; j<= x; j += i)
 {
  arr[j]= true;
 }
+
 }
- for(int i=2; i<=x; i++)
+ for(int i = 2; i <= x; i++)
 {
-   if(!arr[i] //arr[i] ==false
+   if(!arr[i] //arr[i] == false
  {
-    printf("%d",i);
+    printf("%d", i);
  }
+
 }
-  return EXIT_SUCCESS;
+ 
+free(arr);
+ 
+ return EXIT_SUCCESS;
+
 }
+
